@@ -1,0 +1,99 @@
+# AN588-Homework1-itsjon
+
+# My Attempt into the first homework
+
+# Challenge 1
+
+```{r}
+library(stringr) 
+ulysses_lines <- "Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed."
+ulysses_remove <- gsub("[[:punct:]]", "", ulysses_lines)
+ulysses_words <- str_split(ulysses_remove, " ")[[1]]
+every_third_word <- ulysses_words[seq(1, length(ulysses_words), by = 3)]
+every_third_word
+```
+
+```{r}
+# Gentry's comment: "I recommend writing your code in code blocks so you can easily re-run and edit it as your work. You can either use the Insert drop down menu at the top of your editor pane or use the shortcut "ctrl + alt + i" (cmnd + alt + i on mac)"
+
+# My comment: "I did not know I could do that, and I will say, it's so much better this way."
+```
+
+# Challenge 2
+
+```{r}
+# Suppose m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+
+# Extract and assign columns to **x**
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+x <- m[, c(2,3,6)]
+x 
+
+# **Rows 6-8:**
+x <- m[6:8,]
+x 
+
+# **Row 2, Column 2 -\> Row 6, Column 9:**
+
+x <- m[2:6, 2:9] 
+x
+
+# Gentry's comment: "Very clean, I didn't know you could index with a list like this. Going back to my first note, another benefit of using code blocks is that you don't need to copy the output because it can easily be reproduced." 
+
+# My Comment: The code blocks really helps it. 
+```
+
+# Challenge 3
+
+```{r}
+a <- array(400:1, dim = c(5, 5, 4, 4))
+a[1, 1, 1, 2]
+a[2, 3, 2, ]
+a[1:5, 1:5, 3, 3]
+
+# Gentry's comment: "Looking beyond the output, can you describe how do these commands interact with the matrix to produce the results?"
+
+# My comment: "Once I have build my array and put it into a variable, I used it to identify the number list by which row and column they're in, to "pull it out" as a result.  
+```
+
+# Challenge 4
+
+```{r}
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae")
+Tarsioidea = c("Tarsiidae")
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+Haplorhini <- list(Anthropoidea, Tarsioidea)
+names(Haplorhini) <- list("Anthropoidea", "Catarrhini")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates
+```
+
+# Challenge 5
+
+```{r}
+# **Data Frame**
+numbers <- c(3, 0, 1, 23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2)
+m <- matrix(numbers, nrow = 5, ncol = 3, byrow = TRUE)
+m
+
+numbers <- c(3, 0, 1, 23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2)
+df <- as.data.frame(m)
+df[, 2] <- as.logical(df[, 2])
+df[, 3] <- as.factor(df[, 3])
+df
+
+str(df)
+
+```
+
+# Comments from me:
+
+1.  Overall, not bad what so ever.
+2.  Some technical difficulties at the beginning, but we got through them, albeit, it ended up being a little late. Thanks to my peer for their comments.
+3.  Thanks to gentry to telling me about code blocks. Came in handy there.
